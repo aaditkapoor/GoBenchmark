@@ -1,5 +1,6 @@
 // A Go Package to benchmark code snippets.
 // Get Started
+
 // Creating a benchmark object with 5 iterations
 //b := benchmark.NewBenchmark("measuring quicksort algorithm", func() {
 //	n := quicksort([]int{2312, 212, 2, 31, 33, 0, 23})
@@ -13,18 +14,8 @@
 // Printing stat
 //bs.PrintStats()
 
-package main
-
-import (
-	"fmt"
-	"math/rand"
-
-	"github.com/aaditkapoor/GoBenchmark/benchmark"
-	"github.com/aaditkapoor/GoBenchmark/stats"
-)
-
-// Demo Function
-func quicksort(a []int) []int {
+/* Demo Function
+ func quicksort(a []int) []int {
 	if len(a) < 2 {
 		return a
 	}
@@ -49,27 +40,6 @@ func quicksort(a []int) []int {
 
 	return a
 }
+*/
 
-func main() {
-
-	// --------- STATISTICS ----------
-
-	// Creating a benchmark object with 5 iterations
-	b := benchmark.NewBenchmark("measuring quicksort algorithm", func() {
-		n := quicksort([]int{2312, 212, 2, 31, 33, 0, 23})
-		fmt.Println(n)
-
-	}, 5, benchmark.Micro, benchmark.Nano) // more options: see Benchmark.go
-
-	// Creating a benchmark stat object
-	bs := stats.NewBenchmarkStat(b, stats.All) // more options: see stats.StatType
-
-	// Printing stat
-	bs.PrintStats()
-
-	// ----- END -------------
-
-	// We can also run a plain benchmark by calling .Main()
-
-	//b.Main()
-}
+package benchmark
