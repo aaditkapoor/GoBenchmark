@@ -1,11 +1,12 @@
-// Package benchmark Provides the StatBenchmark type that is capable of getting statistics
+// Package stats Provides the StatBenchmark type that is capable of getting statistics
 // for a benchmark given number of iterations.
-package benchmark
+package stats
 
 import (
 	"fmt"
 	"time"
 
+	bmark "github.com/aaditkapoor/GoBenchmark"
 	"github.com/fatih/color"
 )
 
@@ -37,7 +38,7 @@ const (
 
 // BenchmarkStat represents a statistical Benchmark
 type BenchmarkStat struct {
-	benchmark Benchmark
+	benchmark bmark.Benchmark
 	mean      float64
 	sum       float64
 	mode      float64
@@ -198,13 +199,13 @@ func (benchmark *BenchmarkStat) PrintStats() {
 
 // NewBenchmarkStat create a new Benchmark with statistics qualities
 // NewBenchmarkStat(benchmark, "mean", "mode") || NewBenchmarkStat(benchmark, stats.Mean, stats.Mode)
-func NewBenchmarkStat(benchmark Benchmark, options ...StatType) BenchmarkStat {
+func NewBenchmarkStat(benchmark bmark.Benchmark, options ...StatType) BenchmarkStat {
 	bs := BenchmarkStat{benchmark: benchmark}
 	iterations := benchmark.GetIterations()
 	units := benchmark.GetUnits()
 	function := benchmark.GetFunction()
 	fmt.Printf("\nDescription: %s\n", color.GreenString(benchmark.GetDesc()))
-	fmt.Printf("Statistics for %s with %d iterations and %v units.\n", GetFunctionName(function), iterations, units)
+	fmt.Printf("Statistics for %s with %d iterations and %v units.\n", bmark.GetFunctionName(function), iterations, units)
 
 	var m map[string]time.Duration = benchmark.GetStates()
 	parseOptions(&bs, options, m)

@@ -1,5 +1,5 @@
 // Package stats Utilities that help calculating statistical measures.
-package benchmark
+package stats
 
 import (
 	"fmt"
