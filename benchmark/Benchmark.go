@@ -60,6 +60,11 @@ func (benchmark Benchmark) GetUnits() []ConversionType {
 	return benchmark.units
 }
 
+// GetDesc get the description of the benchmark.
+func (benchmark Benchmark) GetDesc() string {
+	return benchmark.description
+}
+
 // GetFunction get the measuring function.
 func (benchmark Benchmark) GetFunction() func() {
 	return benchmark.function

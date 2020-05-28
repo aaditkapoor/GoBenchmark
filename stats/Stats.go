@@ -84,19 +84,19 @@ func (benchmark BenchmarkStat) GetStat(what StatType) (string, error) {
 
 	switch what {
 	case Mean:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.mean), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.mean), nil
 	case Mode:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.mode), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.mode), nil
 	case Highest:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.highest), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.highest), nil
 	case Lowest:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.lowest), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.lowest), nil
 	case Sum:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.sum), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.sum), nil
 	case Range:
-		return fmt.Sprintf("%s = %f\n", color.GreenString(string(what)), benchmark.frange), nil
+		return fmt.Sprintf("%s = %fμs\n", color.GreenString(string(what)), benchmark.frange), nil
 	case All:
-		return fmt.Sprintf("%s=%f\n%s=%f\n%s=%f\n%s=%f\n%s=%f\n", color.GreenString("mean"), benchmark.mean, color.GreenString("mode"), benchmark.mode, color.GreenString("highest"),
+		return fmt.Sprintf("%s=%fμs\n%s=%fμs\n%s=%fμs\n%s=%fμs\n%s=%fμs\n", color.GreenString("mean"), benchmark.mean, color.GreenString("mode"), benchmark.mode, color.GreenString("highest"),
 			benchmark.highest, color.GreenString("lowest"), benchmark.lowest, color.GreenString("sum"), benchmark.sum), nil
 	default:
 		return fmt.Sprintf("Invalid type: %s", what), fmt.Errorf(color.RedString("Invalid type: %s", what))
@@ -205,7 +205,7 @@ func NewBenchmarkStat(benchmark bpack.Benchmark, options ...StatType) BenchmarkS
 	iterations := benchmark.GetIterations()
 	units := benchmark.GetUnits()
 	function := benchmark.GetFunction()
-
+	fmt.Printf("\nDescription: %s\n", color.GreenString(benchmark.GetDesc()))
 	fmt.Printf("Statistics for %s with %d iterations and %v units.\n", bpack.GetFunctionName(function), iterations, units)
 
 	var m map[string]time.Duration = benchmark.GetStates()
