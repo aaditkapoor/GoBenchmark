@@ -2,11 +2,11 @@
 package main
 
 import (
-	"aaditkapoor/GoBenchmark/benchmark"
-	"aaditkapoor/GoBenchmark/stats"
-
 	"fmt"
 	"math/rand"
+
+	"github.com/aaditkapoor/GoBenchmark/benchmark"
+	"github.com/aaditkapoor/GoBenchmark/stats"
 )
 
 // Demo Function

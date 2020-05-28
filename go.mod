@@ -1,4 +1,4 @@
-module aaditkapoor/GoBenchmark
+module github.com/aaditkapoor/GoBenchmark
 
 go 1.14
 

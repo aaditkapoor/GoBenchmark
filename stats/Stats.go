@@ -3,10 +3,11 @@
 package stats
 
 import (
-	"aaditkapoor/GoBenchmark/benchmark"
-	bpack "aaditkapoor/GoBenchmark/benchmark"
 	"fmt"
 	"time"
+
+	"github.com/aaditkapoor/GoBenchmark/benchmark"
+	bpack "github.com/aaditkapoor/GoBenchmark/benchmark"
 
 	"github.com/fatih/color"
 )
