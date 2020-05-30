@@ -159,31 +159,31 @@ func (benchmark *BenchmarkStat) PrintStats() {
 		switch val {
 		case Mean:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case Mode:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case Highest:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case Lowest:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case Sum:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case Range:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		case All:
 			if st, err := benchmark.GetStat(val); err == nil {
-				printable += fmt.Sprintf("%s", st)
+				printable += st
 			}
 		default:
 			if _, err := benchmark.GetStat(val); err != nil {
@@ -193,7 +193,7 @@ func (benchmark *BenchmarkStat) PrintStats() {
 		}
 	}
 
-	s := fmt.Sprintf("%s", printable)
+	s := printable
 	fmt.Println(s)
 }
 
