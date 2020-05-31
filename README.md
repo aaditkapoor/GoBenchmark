@@ -1,6 +1,6 @@
 # GoBenchmark
 
-GoBenchmark is library that can help you benchmark code snippets. 
+GoBenchmark is a library that can help you benchmark code snippets. 
 -  Easy benchmarking 
 - Abilitiy to customize units and statistical measures.
 - Ability to graph your output. (Not yet completed)
